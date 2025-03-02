@@ -1,0 +1,282 @@
+# Output
+type StationOutput {
+  id: String!
+  name: String!
+  code: String
+  type: String
+  sub_types: [String]
+  station_catalog: StationStationCatalogOutput
+  ext_station_id: String
+  ext_station_code: String
+  address: String
+  basin_name: String
+  sub_basin_name: String
+  river: String
+  amphur_name: String
+  tambon_name: String
+  province_name: String
+  phone: String
+  pictures: [String]!
+  tags: [String]
+  latitude: Float
+  longitude: Float
+  bank_fr_height: Float
+  bank_fl_height: Float
+  bank_br_height: Float
+  bank_bl_height: Float
+  bank_r_height: Float
+  bank_l_height: Float
+  thresholds: [StationThresholdsOutput]
+  floating_switch_level: Float
+  layout_picture: String
+  users: [StationUserOutput]
+  devices: [StationDeviceOutput]
+  info: [StationInfoOutput]
+  cross_sections: [StationDataLoaderCrossSectionOutput]
+  station_meta: StationMetaOutput
+  owner_name: String
+  project_name: String
+  source_group: String
+  alias_code: String
+  layouts: [StationInfoOutput]
+}
+type StationStationCatalogOutput {
+  id: String!
+  name: String
+  type: String!
+  sub_types: [String]
+  device_rules: [StationStationCatalogDeviceRulesOutput]
+  pictures: [String]
+  icon: String
+  plc_template_id: String
+}
+type StationStationCatalogDeviceRulesOutput {
+  type: String
+  sub_type: String
+  availability: String
+  position: [String]
+}
+type StationThresholdsOutput {
+  name: String
+  type: String!
+  sensor_type: String!
+  position: [String!]!
+  warning: String
+  critical: String
+  notify: Boolean
+}
+type StationUserOutput {
+  id: String!
+  firstname: String!
+  lastname: String!
+  email: String!
+  phone: String
+  picture: String
+  employee_id: String
+  group: String
+}
+type StationDeviceOutput {
+  id: String!
+  name: String!
+  serial: String!
+  position: String
+  comm_id: String
+  x_coordinate: Int
+  y_coordinate: Int
+  pictures: [String]!
+  info: [StationInfoOutput]
+  catalog: StationDeviceCatalogOutput
+  status: String!
+  device_relations: [StationDeviceRelationsOutput]
+  views: String
+}
+type StationInfoOutput {
+  key: String!
+  value: String!
+}
+type StationDataLoaderCrossSectionOutput {
+  id: String!
+  position: String
+  points: [StationDistanceBottomLevelOutput!]!
+  info: [StationInfoOutput]
+  survey_timestamp: Float
+  survey_by: String
+}
+type StationMetaOutput {
+  code: String
+  name: String
+  short_name: String
+}
+type StationDeviceCatalogOutput {
+  id: String!
+  type: String!
+  sub_type: String
+  brand_name: String!
+  model: String!
+  version: String
+  pictures: [String]!
+  sensors: [StationSensorOutput!]
+  info: [StationCatalogInfoOutput!]
+  maintenance_cycle: StationDeviceCatalogMaintenanceCycleOutput
+  icon: String
+}
+type StationDeviceRelationsOutput {
+  id: String!
+  device_ids: [String!]!
+  relation_type: String!
+}
+type StationDistanceBottomLevelOutput {
+  distance: Float!
+  bottom_level: Float!
+}
+type StationSensorOutput {
+  name: String!
+  type: String!
+  unit: String
+  maximum: Float
+  minimum: Float
+  messages: [MessageObjectOutput]
+  display_periods: [Int!]
+  threshold_type: String
+  report_method: String
+}
+type StationCatalogInfoOutput {
+  key: String!
+  value: String!
+  unit: String
+}
+type StationDeviceCatalogMaintenanceCycleOutput {
+  day_cycle: String!
+  working_minute_cycle: Int
+}
+type StationDeviceCatalogOutput {
+  id: String!
+  type: String!
+  sub_type: String
+  brand_name: String!
+  model: String!
+  version: String
+  pictures: [String]!
+  sensors: [StationSensorOutput!]
+  info: [StationCatalogInfoOutput!]
+  maintenance_cycle: StationDeviceCatalogMaintenanceCycleOutput
+  icon: String
+}
+type StationDeviceRelationsOutput {
+  id: String!
+  device_ids: [String!]!
+  relation_type: String!
+}
+type MessageObjectOutput {
+  key: String
+  value: String
+}
+
+# Input
+input StationListInput {
+  point: StationPointInput
+  limit: Int
+  offset: Int
+}
+input StationPointInput {
+  ne: StationLatLongInput!
+  nw: StationLatLongInput!
+  se: StationLatLongInput!
+  sw: StationLatLongInput!
+}
+input StationQueryInput {
+  station_id: String!
+}
+input StationUpdateInput {
+  id: String!
+  name: String
+  code: String
+  ext_station_id: String
+  ext_station_code: String
+  address: String
+  basin_name: String
+  sub_basin_name: String
+  river: String
+  amphur_name: String
+  tambon_name: String
+  province_name: String
+  phone: String
+  tags: [String]
+  latitude: Float
+  longitude: Float
+  bank_fr_height: Float
+  bank_fl_height: Float
+  bank_br_height: Float
+  bank_bl_height: Float
+  bank_r_height: Float
+  bank_l_height: Float
+  thresholds: [StationThresholdsInput]
+  floating_switch_level: Float
+  status: String
+  layout_picture: String
+  info: [StationInfoInput]
+  source_group: String
+  layouts: [StationInfoInput]
+}
+input StationThresholdsInput {
+  name: String
+  type: String!
+  sensor_type: String!
+  position: [String!]!
+  warning: String
+  critical: String
+  notify: Boolean
+}
+input StationInfoInput {
+  key: String!
+  value: String!
+}
+input StationLatLongInput {
+  latitude: Float!
+  longitude: Float!
+}
+input StationCreateInput {
+  name: String!
+  code: String
+  station_catalog_id: String!
+  ext_station_id: String
+  ext_station_code: String
+  address: String
+  basin_name: String
+  sub_basin_name: String
+  river: String
+  amphur_name: String
+  tambon_name: String
+  province_name: String
+  phone: String
+  image: String
+  tags: [String]
+  latitude: Float
+  longitude: Float
+  bank_fr_height: Float
+  bank_fl_height: Float
+  bank_br_height: Float
+  bank_bl_height: Float
+  bank_r_height: Float
+  bank_l_height: Float
+  thresholds: [StationThresholdsInput]
+  floating_switch_level: Float
+  info: [StationInfoInput]
+  source_group: String!
+}
+input StationDeleteInput {
+  station_id: String!
+}
+
+# Query
+type Query {
+  StationList(query: StationListInput): [StationOutput]!
+  Station(query: StationQueryInput!): StationOutput
+}
+
+# Mutation
+type Mutation {
+  StationCreate(value: StationCreateInput!): StationOutput
+  StationUpdate(value: StationUpdateInput!): StationOutput
+  StationDelete(value: StationDeleteInput!): Boolean
+}
