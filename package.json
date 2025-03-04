@@ -30,8 +30,9 @@
     "@nestjs/platform-express": "^10.0.0",
     "graphql": "^16.10.0",
     "reflect-metadata": "^0.2.0",
+    "rpro-utility": "git+https://water:CoDy_uxufkxF2a1UTQrm@gitlab.com/grandline/kawa/microservices/sharing-modules",
     "rxjs": "^7.8.1",
-    "rpro-utility": "git+https://water:CoDy_uxufkxF2a1UTQrm@gitlab.com/grandline/kawa/microservices/sharing-modules"
+    "uuid": "^11.1.0"
   },
   "devDependencies": {
     "@nestjs/cli": "^10.0.0",
