@@ -42,7 +42,15 @@ type Station {
 
 type Query {
   StationList: [Station!]!
-  Station(value: String!): Station!
+  Station(query: StationQueryInput!): Station!
+}
+
+input StationQueryInput {
+  id: String!
+  name: String
+  code: String
+  source_group: String
+  station_catalog_id: String
 }
 
 type Mutation {

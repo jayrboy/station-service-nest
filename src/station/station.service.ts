@@ -18,14 +18,8 @@ export class StationService {
     return this.stations.findAll<Station>();
   }
 
-  findOne(id: string) {
-    return {
-      id,
-      name: 'nesttest002',
-      source_group: 'RPRO',
-      alias_code: null,
-      code: 'nesttest002',
-    };
+  async findOne(id: string): Promise<Station> {
+    return await this.stations.findByPk(id);
   }
 
   update(id: string, stationUpdateInput: StationUpdateInput) {

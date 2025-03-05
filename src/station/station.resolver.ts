@@ -3,6 +3,7 @@ import { StationService } from './station.service';
 import { Station } from './schemas/station.schema';
 import { StationCreateInput } from './args/station-create.input';
 import { StationUpdateInput } from './args/station-update.input';
+import { StationQueryInput } from './args/station-query.input';
 
 @Resolver(() => Station)
 export class StationResolver {
@@ -20,8 +21,8 @@ export class StationResolver {
   }
 
   @Query(() => Station, { name: 'Station' })
-  Station(@Args('value') id: string) {
-    return this.stationService.findOne(id);
+  Station(@Args('query') stationQueryInput: StationQueryInput) {
+    return this.stationService.findOne(stationQueryInput.id);
   }
 
   @Mutation(() => Station)
