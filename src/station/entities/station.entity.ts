@@ -1,109 +1,243 @@
-import { ObjectType, Field, Float } from '@nestjs/graphql';
+import {
+  Table,
+  Column,
+  Model,
+  DataType,
+  // ForeignKey,
+  // BelongsTo,
+} from 'sequelize-typescript';
+import { Utility } from 'rpro-utility';
 
-@ObjectType()
-export class Station {
-  @Field()
-  id?: string;
+const { Enumerations } = Utility;
+const { STATUS } = Enumerations;
 
-  @Field()
+const Statuses = Object.values(STATUS);
+
+@Table({ tableName: 'stations' })
+export class Station extends Model {
+  @Column({
+    type: DataType.STRING,
+    allowNull: false,
+  })
   name: string;
 
-  @Field({ nullable: true })
-  code?: string;
+  @Column({
+    type: DataType.STRING,
+  })
+  code: string;
 
-  @Field({ nullable: true })
-  ext_station_id?: string;
+  @Column({
+    field: 'ext_station_id',
+    type: DataType.STRING,
+  })
+  extStationId: string;
 
-  @Field({ nullable: true })
-  ext_station_code?: string;
+  @Column({
+    field: 'ext_station_code',
+    type: DataType.STRING,
+  })
+  extStationCode: string;
 
-  @Field()
-  station_catalog_id: string;
+  // @ForeignKey(() => StationCatalog)
+  @Column({
+    field: 'station_catalog_id',
+    type: DataType.UUID,
+  })
+  stationCatalogId: string;
 
-  @Field({ nullable: true })
-  station_meta_code?: string;
+  // @ForeignKey(() => StationMeta)
+  @Column({
+    field: 'station_meta_code',
+    type: DataType.STRING,
+  })
+  stationMetaCode: string;
 
-  @Field({ nullable: true })
-  address?: string;
+  @Column({
+    type: DataType.TEXT,
+  })
+  address: string;
 
-  @Field({ nullable: true })
-  basin_name?: string;
+  @Column({
+    field: 'basin_name',
+    type: DataType.STRING,
+  })
+  basinName: string;
 
-  @Field({ nullable: true })
-  sub_basin_name?: string;
+  @Column({
+    field: 'sub_basin_name',
+    type: DataType.STRING,
+  })
+  subBasinName: string;
 
-  @Field({ nullable: true })
-  river?: string;
+  @Column({
+    field: 'river',
+    type: DataType.STRING,
+  })
+  river: string;
 
-  @Field({ nullable: true })
-  amphur_name?: string;
+  @Column({
+    field: 'amphur_name',
+    type: DataType.STRING,
+  })
+  amphurName: string;
 
-  @Field({ nullable: true })
-  tambon_name?: string;
+  @Column({
+    field: 'tambon_name',
+    type: DataType.STRING,
+  })
+  tambonName: string;
 
-  @Field({ nullable: true })
-  province_name?: string;
+  @Column({
+    field: 'province_name',
+    type: DataType.STRING,
+  })
+  provinceName: string;
 
-  @Field({ nullable: true })
-  phone?: string;
+  @Column({
+    type: DataType.STRING,
+  })
+  phone: string;
 
-  @Field(() => Float, { nullable: true })
-  latitude?: number;
+  @Column({
+    type: DataType.DOUBLE,
+  })
+  latitude: number;
 
-  @Field(() => Float, { nullable: true })
-  longitude?: number;
+  @Column({
+    type: DataType.DOUBLE,
+  })
+  longitude: number;
 
-  @Field(() => [String], { defaultValue: [] })
+  @Column({
+    type: DataType.ARRAY(DataType.STRING),
+    defaultValue: [],
+  })
   pictures: string[];
 
-  @Field(() => Float, { nullable: true })
-  bank_fr_height?: number;
+  @Column({
+    field: 'bank_fr_height',
+    type: DataType.FLOAT,
+  })
+  bankFrHeight: number;
 
-  @Field(() => Float, { nullable: true })
-  bank_fl_height?: number;
+  @Column({
+    field: 'bank_fl_height',
+    type: DataType.FLOAT,
+  })
+  bankFlHeight: number;
 
-  @Field(() => Float, { nullable: true })
-  bank_br_height?: number;
+  @Column({
+    field: 'bank_br_height',
+    type: DataType.FLOAT,
+  })
+  bankBrHeight: number;
 
-  @Field(() => Float, { nullable: true })
-  bank_bl_height?: number;
+  @Column({
+    field: 'bank_bl_height',
+    type: DataType.FLOAT,
+  })
+  bankBlHeight: number;
 
-  @Field(() => Float, { nullable: true })
-  bank_r_height?: number;
+  @Column({
+    field: 'bank_r_height',
+    type: DataType.FLOAT,
+  })
+  bankRHeight: number;
 
-  @Field(() => Float, { nullable: true })
-  bank_l_height?: number;
+  @Column({
+    field: 'bank_l_height',
+    type: DataType.FLOAT,
+  })
+  bankLHeight: number;
 
-  @Field(() => [String], { defaultValue: [] })
+  @Column({
+    type: DataType.ARRAY(DataType.JSONB),
+    defaultValue: [],
+  })
+  thresholds: any[];
+
+  @Column({
+    field: 'floating_switch_level',
+    type: DataType.FLOAT,
+  })
+  floatingSwitchLevel: number;
+
+  @Column({
+    type: DataType.ENUM(...(Object.values(Statuses) as string[])),
+    allowNull: false,
+    defaultValue: STATUS.ACTIVE,
+  })
+  status: keyof typeof Statuses;
+
+  @Column({
+    field: 'layout_picture',
+    type: DataType.STRING,
+  })
+  layoutPicture: string;
+
+  @Column({
+    type: DataType.ARRAY(DataType.STRING),
+    defaultValue: [],
+  })
   tags: string[];
 
-  @Field(() => [String], { defaultValue: [] })
-  thresholds: string[];
+  @Column({
+    type: DataType.ARRAY(DataType.JSONB),
+    defaultValue: [],
+  })
+  info: any[];
 
-  @Field(() => Float, { nullable: true })
-  floating_switch_level?: number;
+  @Column({
+    field: 'created_at',
+    defaultValue: new Date(),
+  })
+  createdAt: Date;
 
-  @Field()
-  status: string;
+  @Column({
+    field: 'created_by',
+    type: DataType.STRING,
+  })
+  createdBy: Date;
 
-  @Field({ nullable: true })
-  layout_picture?: string;
+  @Column({
+    field: 'updated_at',
+    defaultValue: new Date(),
+  })
+  updatedAt: Date;
 
-  @Field(() => [String], { defaultValue: [] })
-  info: string[];
+  @Column({
+    field: 'updated_by',
+    type: DataType.STRING,
+  })
+  updatedBy: Date;
 
-  @Field({ nullable: true })
-  owner_name?: string;
+  @Column({
+    field: 'owner_name',
+    type: DataType.STRING,
+  })
+  ownerName: string;
 
-  @Field({ nullable: true })
-  project_name?: string;
+  @Column({
+    field: 'project_name',
+    type: DataType.STRING,
+  })
+  projectName: string;
 
-  @Field({ nullable: true })
-  source_group?: string;
+  @Column({
+    field: 'source_group',
+    type: DataType.STRING,
+  })
+  sourceGroup: string;
 
-  @Field({ nullable: true })
-  alias_code?: string;
+  @Column({
+    field: 'alias_code',
+    type: DataType.STRING,
+  })
+  aliasCode: string;
 
-  @Field(() => [String], { defaultValue: [] })
-  layouts: string[];
+  @Column({
+    type: DataType.ARRAY(DataType.JSONB),
+    defaultValue: [],
+  })
+  layouts: any[];
 }

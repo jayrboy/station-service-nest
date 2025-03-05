@@ -1,6 +1,6 @@
 import { Resolver, Query, Mutation, Args } from '@nestjs/graphql';
 import { StationService } from './station.service';
-import { Station } from './entities/station.entity';
+import { Station } from './schemas/station.schema';
 import { StationCreateInput } from './args/station-create.input';
 import { StationUpdateInput } from './args/station-update.input';
 
