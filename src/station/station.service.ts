@@ -11,7 +11,7 @@ export class StationService {
   ) {}
 
   create(stationCreateInput: StationCreateInput) {
-    return stationCreateInput;
+    return this.stations.create(stationCreateInput);
   }
 
   findAll(): Promise<Station[]> {
