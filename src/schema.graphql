@@ -1,0 +1,68 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Station {
+  id: String!
+  name: String!
+  code: String
+  ext_station_id: String
+  ext_station_code: String
+  station_catalog_id: String!
+  station_meta_code: String
+  address: String
+  basin_name: String
+  sub_basin_name: String
+  river: String
+  amphur_name: String
+  tambon_name: String
+  province_name: String
+  phone: String
+  latitude: Float
+  longitude: Float
+  pictures: [String!]!
+  bank_fr_height: Float
+  bank_fl_height: Float
+  bank_br_height: Float
+  bank_bl_height: Float
+  bank_r_height: Float
+  bank_l_height: Float
+  tags: [String!]!
+  thresholds: [String!]!
+  floating_switch_level: Float
+  status: String!
+  layout_picture: String
+  info: [String!]!
+  owner_name: String
+  project_name: String
+  source_group: String
+  alias_code: String
+  layouts: [String!]!
+}
+
+type Query {
+  StationList: [Station!]!
+  Station(value: String!): Station!
+}
+
+type Mutation {
+  StationCreate(value: StationCreateInput!): Station!
+  StationUpdate(value: StationUpdateInput!): Station!
+  StationDelete(value: String!): Station!
+}
+
+input StationCreateInput {
+  id: String
+  name: String!
+  code: String
+  source_group: String!
+  station_catalog_id: String!
+}
+
+input StationUpdateInput {
+  id: String!
+  name: String
+  code: String
+  source_group: String
+  station_catalog_id: String
+}
