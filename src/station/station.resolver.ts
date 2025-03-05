@@ -4,6 +4,7 @@ import { Station } from './schemas/station.schema';
 import { StationCreateInput } from './args/station-create.input';
 import { StationUpdateInput } from './args/station-update.input';
 import { StationQueryInput } from './args/station-query.input';
+import { StationDeleteInput } from './args/station-delete.input';
 
 @Resolver(() => Station)
 export class StationResolver {
@@ -38,7 +39,7 @@ export class StationResolver {
   }
 
   @Mutation(() => Station)
-  StationDelete(@Args('value') id: string) {
-    return this.stationService.remove(id);
+  StationDelete(@Args('value') stationDeleteInput: StationDeleteInput) {
+    return this.stationService.remove(stationDeleteInput.id);
   }
 }

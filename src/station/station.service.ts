@@ -37,8 +37,12 @@ export class StationService {
 
   async remove(id: string) {
     const station = await this.stations.findByPk(id);
-    if (station) {
-      await station.destroy();
+
+    if (!station) {
+      throw new Error('Station not found');
     }
+
+    await station.destroy();
+    return station;
   }
 }
