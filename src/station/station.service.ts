@@ -22,11 +22,23 @@ export class StationService {
     return await this.stations.findByPk(id);
   }
 
-  update(id: string, stationUpdateInput: StationUpdateInput) {
-    return `This action updates a #${id} station`;
+  async update(id: string, stationUpdateInput: StationUpdateInput) {
+    const [affectedRows, [updatedStation]] = await this.stations.update(
+      stationUpdateInput,
+      {
+        where: { id },
+        returning: true,
+      },
+    );
+
+    if (affectedRows === 0) return null;
+    return updatedStation;
   }
 
-  remove(id: string) {
-    return `This action removes a #${id} station`;
+  async remove(id: string) {
+    const station = await this.stations.findByPk(id);
+    if (station) {
+      await station.destroy();
+    }
   }
 }

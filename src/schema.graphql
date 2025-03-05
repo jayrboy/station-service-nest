@@ -71,6 +71,7 @@ input StationUpdateInput {
   id: String!
   name: String
   code: String
+  basin_name: String
+  sub_basin_name: String
   source_group: String
-  station_catalog_id: String
 }

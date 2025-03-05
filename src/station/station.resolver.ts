@@ -26,11 +26,15 @@ export class StationResolver {
   }
 
   @Mutation(() => Station)
-  StationUpdate(@Args('value') stationUpdateInput: StationUpdateInput) {
-    return this.stationService.update(
+  async StationUpdate(@Args('value') stationUpdateInput: StationUpdateInput) {
+    const station = await this.stationService.update(
       stationUpdateInput.id,
       stationUpdateInput,
     );
+    if (!station) {
+      throw new Error('Station not found or update failed');
+    }
+    return station;
   }
 
   @Mutation(() => Station)
