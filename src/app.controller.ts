@@ -14,4 +14,9 @@ export class AppController {
   getVersion() {
     return this.appService.getVersion();
   }
+
+  @Get('/test-lib')
+  async getTestLib() {
+    return await this.appService.getTestLib();
+  }
 }
