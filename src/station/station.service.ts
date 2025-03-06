@@ -14,8 +14,8 @@ export class StationService {
     return this.stations.create(stationCreateInput);
   }
 
-  findAll(): Promise<Station[]> {
-    return this.stations.findAll<Station>();
+  async findAll(): Promise<Station[]> {
+    return await this.stations.findAll<Station>();
   }
 
   async findOne(id: string): Promise<Station> {
