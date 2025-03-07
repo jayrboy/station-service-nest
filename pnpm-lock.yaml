@@ -42,8 +42,8 @@ importers:
         specifier: ^8.1.4
         version: 8.1.4
       axios:
-        specifier: ^1.8.1
-        version: 1.8.1
+        specifier: ^0.21.1
+        version: 0.21.4
       class-transformer:
         specifier: ^0.5.1
         version: 0.5.1
@@ -51,16 +51,16 @@ importers:
         specifier: ^0.14.1
         version: 0.14.1
       dataloader:
-        specifier: ^2.2.3
+        specifier: ^2.2.2
         version: 2.2.3
       dotenv:
-        specifier: ^16.4.7
-        version: 16.4.7
+        specifier: ^10.0.0
+        version: 10.0.0
       elasticsearch:
-        specifier: ^16.7.3
+        specifier: ^16.7.1
         version: 16.7.3
       generate-password:
-        specifier: ^1.7.1
+        specifier: ^1.5.1
         version: 1.7.1
       graphql:
         specifier: ^16.10.0
@@ -72,23 +72,23 @@ importers:
         specifier: ^0.13.0
         version: 0.13.0
       ioredis:
-        specifier: ^5.5.0
-        version: 5.5.0
+        specifier: ^4.16.1
+        version: 4.29.1
       jsonwebtoken:
-        specifier: ^9.0.2
-        version: 9.0.2
+        specifier: ^8.5.1
+        version: 8.5.1
       kafkajs:
-        specifier: ^2.2.4
-        version: 2.2.4
+        specifier: 1.16.0
+        version: 1.16.0
       lodash:
-        specifier: ^4.17.21
+        specifier: ^4.17.15
         version: 4.17.21
       minio:
-        specifier: ^8.0.4
-        version: 8.0.4
+        specifier: ^7.0.15
+        version: 7.1.4
       moment:
-        specifier: ^2.30.1
-        version: 2.30.1
+        specifier: 2.24.0
+        version: 2.24.0
       morgan:
         specifier: ^1.10.0
         version: 1.10.0
@@ -99,20 +99,20 @@ importers:
         specifier: ^11.2.0
         version: 11.2.0
       pg:
-        specifier: ^8.13.3
+        specifier: ^8.6.0
         version: 8.13.3
       pg-hstore:
-        specifier: ^2.3.4
-        version: 2.3.4
+        specifier: 2.3.3
+        version: 2.3.3
       prom-client:
-        specifier: ^15.1.3
-        version: 15.1.3
+        specifier: ^11.5.3
+        version: 11.5.3
       reflect-metadata:
         specifier: ^0.2.0
         version: 0.2.2
       rpro-utility:
         specifier: git+https://water:CoDy_uxufkxF2a1UTQrm@gitlab.com/grandline/kawa/microservices/sharing-modules#develop
-        version: sharing-modules@git+https://git@gitlab.com:grandline/kawa/microservices/sharing-modules.git#1c826d1e27fa2915b7ec8b5ad383926f27b90b76(@typescript-eslint/parser@8.26.0(eslint@8.57.1)(typescript@5.8.2))
+        version: sharing-modules@git+https://git@gitlab.com:grandline/kawa/microservices/sharing-modules.git#7fdf15ddeca40c55237d4e65a7cf091d537f7a10(@typescript-eslint/parser@8.26.0(eslint@8.57.1)(typescript@5.8.2))
       rxjs:
         specifier: ^7.8.1
         version: 7.8.2
@@ -129,8 +129,8 @@ importers:
         specifier: ^2.0.0
         version: 2.0.0
       uuid:
-        specifier: ^11.1.0
-        version: 11.1.0
+        specifier: ^8.3.2
+        version: 8.3.2
       winston:
         specifier: ^3.17.0
         version: 3.17.0
@@ -1522,11 +1522,14 @@ packages:
     resolution: {integrity: sha512-wvUjBtSGN7+7SjNpq/9M2Tg350UZD3q62IFZLbRAR1bSMlCo1ZaeW+BJ+D090e4hIIZLBcTDWe4Mh4jvUDajzQ==}
     engines: {node: '>= 0.4'}
 
+  axios@0.21.4:
+    resolution: {integrity: sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg==}
+
   axios@0.24.0:
     resolution: {integrity: sha512-Q6cWsys88HoPgAaFAVUb0WpPk0O8iTeisR9IMqy9G8AbO4NlpVknrnQS03zzF9PGAWgO3cgletO3VjV/P7VztA==}
 
-  axios@1.8.1:
-    resolution: {integrity: sha512-NN+fvwH/kV01dYUQ3PTOZns4LWtWhOFCAhQ/pHb88WQ1hNe5V/dvFwc4VJcDL11LT9xSX0QtsR8sWUuyOuOq7g==}
+  axios@1.8.2:
+    resolution: {integrity: sha512-ls4GYBm5aig9vWx8AWDSGLpnpDQRtWAfrjU+EuytuODrFBkqesN2RkOQCBzrA1RQNHw1SmRMSDDDSwzNAYQ6Rg==}
 
   babel-jest@29.7.0:
     resolution: {integrity: sha512-BrvGY3xZSwEcCzKvKsCi2GgHqDqsYkOP4/by5xCgIwGXQxIEh+8ew3gmrE1y7XRR6LHZIj6yLYnUi/mm2KXKBg==}
@@ -1619,9 +1622,6 @@ packages:
 
   bser@2.1.1:
     resolution: {integrity: sha512-gQxTNE/GAfIIrmHLUE3oJyp5FO6HRBfhjnw4/wMmA63ZGDJnWBmgY/lyQBpnDUkGmAhbSe39tx2d/iTOAfglwQ==}
-
-  buffer-crc32@0.2.13:
-    resolution: {integrity: sha512-VO9Ht/+p3SN7SKWqcrgEzjGbRSJYTx+Q1pTQC0wrWqHx0vpJraQ6GtHx8tvcg1rlK1byhU5gccxgOgj7B0TDkQ==}
 
   buffer-crc32@1.0.0:
     resolution: {integrity: sha512-Db1SbgBS/fg/392AblrMJk97KggmvYhr4pB5ZIMTWtaivCPMWLkmb7m21cJvpvgK+J3nsU2CmmixNBZx4vFj/w==}
@@ -2012,10 +2012,6 @@ packages:
     resolution: {integrity: sha512-XwE+iZ4D6ZUB7mfYRMb5wByE8L74HCn30FBN7sWnXksWc1LO1bPDl67pBR9o/kC4z/xSNAwkMYcGgqDV3BE3Hw==}
     engines: {node: '>=0.10'}
 
-  denque@2.1.0:
-    resolution: {integrity: sha512-HVQE3AAb/pxF8fQAoiqpvg9i3evqug3hoiwakOyZAwJm+6vZehbkYXZ0l4JxS+I3QxM97v5aaRNhj8v5oBhekw==}
-    engines: {node: '>=0.10'}
-
   depd@2.0.0:
     resolution: {integrity: sha512-g7nH6P6dyDioJogAAGprGpCtVImJhpPk/roCzdb3fIh61/s/nPsfR6onyMwkCAR/OlC3yBC0lESvUoQEAssIrw==}
     engines: {node: '>= 0.8'}
@@ -2105,8 +2101,8 @@ packages:
     engines: {node: '>=0.8'}
     deprecated: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
 
-  electron-to-chromium@1.5.112:
-    resolution: {integrity: sha512-oen93kVyqSb3l+ziUgzIOlWt/oOuy4zRmpwestMn4rhFWAoFJeFuCVte9F2fASjeZZo7l/Cif9TiyrdW4CwEMA==}
+  electron-to-chromium@1.5.113:
+    resolution: {integrity: sha512-wjT2O4hX+wdWPJ76gWSkMhcHAV2PTMX+QetUCPYEdCIe+cxmgzzSSiGRCKW8nuh4mwKZlpv0xvoW7OF2X+wmHg==}
 
   emittery@0.13.1:
     resolution: {integrity: sha512-DeWwawk6r5yR9jFgnDKYt4sLS0LmHJJi3ZOnb5/JdbYwj3nW+FxQnHIjhBKz8YLC7oRNPVM9NQ47I3CVx34eqQ==}
@@ -2837,13 +2833,9 @@ packages:
     resolution: {integrity: sha512-4gd7VpWNQNB4UKKCFFVcp1AVv+FMOgs9NKzjHKusc8jTMhd5eL1NqQqOpE0KzMds804/yHlglp3uxgluOqAPLw==}
     engines: {node: '>= 0.4'}
 
-  ioredis@4.28.5:
-    resolution: {integrity: sha512-3GYo0GJtLqgNXj4YhrisLaNNvWSNwSS2wS4OELGfGxH8I69+XfNdnmV1AyN+ZqMh0i7eX+SWjrwFKDBDgfBC1A==}
+  ioredis@4.29.1:
+    resolution: {integrity: sha512-iq4u3AC9h9/P/gBXH1cUR7Ln0exKexqMaYDwUaoZJzkvvgJs9W5+CLQFS0APyG8uyvJJjn6q6Vx7LwmZQu3h5A==}
     engines: {node: '>=6'}
-
-  ioredis@5.5.0:
-    resolution: {integrity: sha512-7CutT89g23FfSa8MDoIFs2GYYa0PaNiW/OrT+nRyjRXHDZd17HmIgy+reOQ/yhh72NznNjGuS8kbCAcA4Ro4mw==}
-    engines: {node: '>=12.22.0'}
 
   ipaddr.js@1.9.1:
     resolution: {integrity: sha512-0KI/607xoxSToH7GjN1FfSbLoU0+btTicjsQSWQlh/hZykN8KpmMf7uYwPW3R+akZ6R/w18ZlXSHBYXiYUPO3g==}
@@ -3240,9 +3232,6 @@ packages:
   json-stable-stringify-without-jsonify@1.0.1:
     resolution: {integrity: sha512-Bdboy+l7tA3OGW6FjyFHWkP5LuByj1Tk33Ljyq0axyzdk9//JSi2u3fP1QSmd1KNwq6VOKYGlAu87CisVir6Pw==}
 
-  json-stream@1.0.0:
-    resolution: {integrity: sha512-H/ZGY0nIAg3QcOwE1QN/rK/Fa7gJn7Ii5obwp6zyPO4xiPNwpIMjqy2gwjBEGqzkF/vSWEIBQCBuN19hYiL6Qg==}
-
   json5@1.0.2:
     resolution: {integrity: sha512-g1MWMLBiz8FKi1e4w0UyVL3w+iJceWAFBAaBnnGKOpNa5f8TLktkbre1+s6oICydWAm+HRUGTmI+//xv2hvXYA==}
     hasBin: true
@@ -3265,22 +3254,18 @@ packages:
     resolution: {integrity: sha512-XjwVfRS6jTMsqYs0EsuJ4LGxXV14zQybNd4L2r0UvbVnSF9Af8x7p5MzbJ90Ioz/9TI41/hTCvznF/loiSzn8w==}
     engines: {node: '>=4', npm: '>=1.4.28'}
 
-  jsonwebtoken@9.0.2:
-    resolution: {integrity: sha512-PRp66vJ865SSqOlgqS8hujT5U4AOgMfhrwYIuIhfKaoSCZcirrmASQr8CX7cUg+RMih+hgznrjp99o+W4pJLHQ==}
-    engines: {node: '>=12', npm: '>=6'}
-
   jwa@1.4.1:
     resolution: {integrity: sha512-qiLX/xhEEFKUAJ6FiBMbes3w9ATzyk5W7Hvzpa/SLYdxNtng+gcurvrI7TbACjIXlsJyr05/S1oUhZrc63evQA==}
 
   jws@3.2.2:
     resolution: {integrity: sha512-YHlZCB6lMTllWDtSPHz/ZXTsi8S00usEV6v1tjq8tOUZzw7DpSDWVXjXDre6ed1w/pd495ODpHZYSdkRTsa0HA==}
 
+  kafkajs@1.16.0:
+    resolution: {integrity: sha512-+Rcfu2hyQ/jv5skqRY8xA7Ra+mmRkDAzCaLDYbkGtgsNKpzxPWiLbk8ub0dgr4EbWrN1Zb4BCXHUkD6+zYfdWg==}
+    engines: {node: '>=10.13.0'}
+
   kafkajs@2.2.0:
     resolution: {integrity: sha512-+sdgyLuC0Idw1g9LSBXjtoCr4K+vVaHP+tulzAK+V+HHvO3uW5woNkzLnbBx0MN4WRuEl/5g84M3FSkH0ZDzrA==}
-    engines: {node: '>=14.0.0'}
-
-  kafkajs@2.2.4:
-    resolution: {integrity: sha512-j/YeapB1vfPT2iOIUn/vxdyKEuhuY2PxMBvf5JWux6iSaukAccrMtXEY/Lb7OvavDhOWME589bpLrEdnVHjfjA==}
     engines: {node: '>=14.0.0'}
 
   keyv@4.5.4:
@@ -3512,13 +3497,10 @@ packages:
   minimist@1.2.8:
     resolution: {integrity: sha512-2yyAR8qBkN3YuheJanUpWC5U3bb5osDywNB8RzDVlDwDHbocAJveqqj1u8+SVD7jkWT4yvsHCpWqqWqAxb0zCA==}
 
-  minio@7.1.3:
-    resolution: {integrity: sha512-xPrLjWkTT5E7H7VnzOjF//xBp9I40jYB4aWhb2xTFopXXfw+Wo82DDWngdUju7Doy3Wk7R8C4LAgwhLHHnf0wA==}
+  minio@7.1.4:
+    resolution: {integrity: sha512-1rjcS8l7QlWsA4EZ1JauInkRkzu2J/qN0U+ee3HZErY84bdcebMhd10wDdfpAjmXyFsvrUPnKjZB2G7OJXrvXw==}
     engines: {node: ^16 || ^18 || >=20}
-
-  minio@8.0.4:
-    resolution: {integrity: sha512-GVW7y2PNbzjjFJ9opVMGKvDNuRkyz3bMt1q7UrHs7bsKFWLXbSvMPffjE/HkVYWUjlD8kQwMaeqiHhhvZJJOfQ==}
-    engines: {node: ^16 || ^18 || >=20}
+    deprecated: This release broke API contract, please use 8.0.0 instead by making relevant changes to application or keep 7.1.3 (to avoid making application changes)
 
   minipass@7.1.2:
     resolution: {integrity: sha512-qOOzS1cBTWYF4BH8fVePDBOO9iptMnGUEZwNc/cMWnTV2nVLZ7VoNWEPHkYczZA0pdoA7dl6e7FL659nX9S2aw==}
@@ -3533,6 +3515,9 @@ packages:
 
   moment-timezone@0.5.47:
     resolution: {integrity: sha512-UbNt/JAWS0m/NJOebR0QMRHBk0hu03r5dx9GK8Cs0AS3I81yDcOc9k+DytPItgVvBP7J6Mf6U2n3BPAacAV9oA==}
+
+  moment@2.24.0:
+    resolution: {integrity: sha512-bV7f+6l2QigeBBZSM/6yTNq4P2fNpSWj/0e7jQcy87A8e7o2nAfP/34/2ky5Vw4B9S446EtIhodAzkFCcR4dQg==}
 
   moment@2.30.1:
     resolution: {integrity: sha512-uEmtNhbDOrWPFS+hdjFCBfy9f2YoyzRpwcl+DqpC6taX21FzsTLQVbMV/W7PzNSX6x/bhC1zA3c2UQ5NzH6how==}
@@ -3870,8 +3855,8 @@ packages:
   pg-connection-string@2.7.0:
     resolution: {integrity: sha512-PI2W9mv53rXJQEOb8xNR8lH7Hr+EKa6oJa38zsK0S/ky2er16ios1wLKhZyxzD7jUReiWokc9WK5nxSnC7W1TA==}
 
-  pg-hstore@2.3.4:
-    resolution: {integrity: sha512-N3SGs/Rf+xA1M2/n0JBiXFDVMzdekwLZLAO0g7mpDY9ouX+fDI7jS6kTq3JujmYbtNSJ53TJ0q4G98KVZSM4EA==}
+  pg-hstore@2.3.3:
+    resolution: {integrity: sha512-qpeTpdkguFgfdoidtfeTho1Q1zPVPbtMHgs8eQ+Aan05iLmIs3Z3oo5DOZRclPGoQ4i68I1kCtQSJSa7i0ZVYg==}
     engines: {node: '>= 0.8.x'}
 
   pg-int8@1.0.1:
@@ -3983,9 +3968,9 @@ packages:
     resolution: {integrity: sha512-7PiHtLll5LdnKIMw100I+8xJXR5gW2QwWYkT6iJva0bXitZKa/XMrSbdmg3r2Xnaidz9Qumd0VPaMrZlF9V9sA==}
     engines: {node: '>=0.4.0'}
 
-  prom-client@15.1.3:
-    resolution: {integrity: sha512-6ZiOBfCywsD4k1BN9IX0uZhF+tJkV8q8llP64G5Hajs4JOeVLPCwpPVcpXy3BwYiUGgyJzsJJQeOIv7+hDSq8g==}
-    engines: {node: ^16 || ^18 || >=20}
+  prom-client@11.5.3:
+    resolution: {integrity: sha512-iz22FmTbtkyL2vt0MdDFY+kWof+S9UB/NACxSn2aJcewtw+EERsen0urSkZ2WrHseNdydsvcxCTAnPcSMZZv4Q==}
+    engines: {node: '>=6.1'}
 
   promise@8.3.0:
     resolution: {integrity: sha512-rZPNPKTOYVNEEKFaq1HqTgOwZD+4/YHS5ukLzQCypkj+OkYx7iv0mA91lJlpPPZ8vMau3IIGj5Qlwrx+8iiSmg==}
@@ -4066,9 +4051,6 @@ packages:
   readdirp@4.1.2:
     resolution: {integrity: sha512-GDhwkLfywWL2s6vEjyhri+eXmfH6j1L7JE27WhqLeYzoh/A3DBaYGEj2H/HFZCn/kMfim73FXxEJTw06WtxQwg==}
     engines: {node: '>= 14.18.0'}
-
-  redis-commands@1.7.0:
-    resolution: {integrity: sha512-nJWqw3bTFy21hX/CPKHth6sfhZbdiHP6bTawSgQBlKOVRG7EZkfHbbHwQJnrE4vsQf0CMNE+3gJ4Fmm16vdVlQ==}
 
   redis-errors@1.2.0:
     resolution: {integrity: sha512-1qny3OExCf0UvUV/5wpYKf2YwPcOqXzkwKKSmKHiE6ZMQs5heeE/c8eXK+PNllPvmjgAbfnsbpkGZWy8cBpn9w==}
@@ -4300,9 +4282,9 @@ packages:
   shallow-clone-shim@2.0.0:
     resolution: {integrity: sha512-YRNymdiL3KGOoS67d73TEmk4tdPTO9GSMCoiphQsTcC9EtC+AOmMPjkyBkRoCJfW9ASsaZw1craaiw1dPN2D3Q==}
 
-  sharing-modules@git+https://git@gitlab.com:grandline/kawa/microservices/sharing-modules.git#1c826d1e27fa2915b7ec8b5ad383926f27b90b76:
-    resolution: {commit: 1c826d1e27fa2915b7ec8b5ad383926f27b90b76, repo: git@gitlab.com:grandline/kawa/microservices/sharing-modules.git, type: git}
-    version: 2.0.146-p5
+  sharing-modules@git+https://git@gitlab.com:grandline/kawa/microservices/sharing-modules.git#7fdf15ddeca40c55237d4e65a7cf091d537f7a10:
+    resolution: {commit: 7fdf15ddeca40c55237d4e65a7cf091d537f7a10, repo: git@gitlab.com:grandline/kawa/microservices/sharing-modules.git, type: git}
+    version: 2.0.146-p7
 
   sharp@0.33.5:
     resolution: {integrity: sha512-haPVm1EkS9pgvHrQ/F3Xy+hgcuMV0Wm9vfIBSiwZ05k+xgb0PkBQpGsAA/oWdDobNaZTH5ppvHtzCFbnSEwHVw==}
@@ -4571,8 +4553,8 @@ packages:
   tdigest@0.1.2:
     resolution: {integrity: sha512-+G0LLgjjo9BZX2MfdvPfH+MKLCrxlXSYec5DaPYP1fe6Iyhf0/fSmJ0bFiZ1F8BT6cGXl2LpltQptzjXKWEkKA==}
 
-  terser-webpack-plugin@5.3.13:
-    resolution: {integrity: sha512-JG3pBixF6kx2o0Yfz2K6pqh72DpwTI08nooHd06tcj5WyIt5SsSiUYqRT+kemrGUNSuSzVhwfZ28aO8gogajNQ==}
+  terser-webpack-plugin@5.3.14:
+    resolution: {integrity: sha512-vkZjpUjb6OMS7dhV+tILUW6BhpDR7P2L/aQSAv+Uwk+m8KATX9EccViHTJR2qDtACKPIYndLGCyl3FMo+r2LMw==}
     engines: {node: '>= 10.13.0'}
     peerDependencies:
       '@swc/core': '*'
@@ -4845,10 +4827,6 @@ packages:
     resolution: {integrity: sha512-pMZTvIkT1d+TFGvDOqodOclx0QWkkgi6Tdoa8gC8ffGAAqz9pzPTZWAybbsHHoED/ztMtkv/VoYTYyShUn81hA==}
     engines: {node: '>= 0.4.0'}
 
-  uuid@11.1.0:
-    resolution: {integrity: sha512-0/A9rDy9P7cJ+8w1c9WD9V//9Wj15Ce2MPz8Ri6032usz+NfePxx5AcN3bN+r6ZL6jEo066/yNYB3tn4pQEx+A==}
-    hasBin: true
-
   uuid@3.4.0:
     resolution: {integrity: sha512-HjSDRw6gZE5JMggctHBcjVak08+KEVhSIiDzFnT9S9aegmp85S/bReBVTb4QTFaRNptJ9kuYaNhnbNEOkbKb/A==}
     deprecated: Please upgrade  to version 7 or higher.  Older versions may use Math.random() in certain circumstances, which is known to be problematic.  See https://v8.dev/blog/math-random for details.
@@ -5057,9 +5035,6 @@ packages:
   xml2js@0.5.0:
     resolution: {integrity: sha512-drPFnkQJik/O+uPKpqSgr22mpuFHqKdbS835iAQrUC73L2F5WkboIRd63ai/2Yg6I1jzifPFKH2NTK+cfglkIA==}
     engines: {node: '>=4.0.0'}
-
-  xml@1.0.1:
-    resolution: {integrity: sha512-huCv9IH9Tcf95zuYCsQraZtWnJvBtLVE0QHMOs8bWyZAFZNDcYjsPq1nEx8jKA9y+Beo9v+7OBPRisQTjinQMw==}
 
   xmlbuilder@11.0.1:
     resolution: {integrity: sha512-fDlsI/kFEx7gLvbecc0/ohLG50fugQp8ryHzMTuW9vSa1GJ0XYWKnhsUx7oie3G98+r56aTQIUB4kht42R3JvA==}
@@ -6117,7 +6092,7 @@ snapshots:
   '@sendgrid/client@8.1.4':
     dependencies:
       '@sendgrid/helpers': 8.0.0
-      axios: 1.8.1
+      axios: 1.8.2
     transitivePeerDependencies:
       - debug
 
@@ -6716,13 +6691,19 @@ snapshots:
     dependencies:
       possible-typed-array-names: 1.1.0
 
+  axios@0.21.4:
+    dependencies:
+      follow-redirects: 1.15.9
+    transitivePeerDependencies:
+      - debug
+
   axios@0.24.0:
     dependencies:
       follow-redirects: 1.15.9
     transitivePeerDependencies:
       - debug
 
-  axios@1.8.1:
+  axios@1.8.2:
     dependencies:
       follow-redirects: 1.15.9
       form-data: 4.0.2
@@ -6856,7 +6837,7 @@ snapshots:
   browserslist@4.24.4:
     dependencies:
       caniuse-lite: 1.0.30001702
-      electron-to-chromium: 1.5.112
+      electron-to-chromium: 1.5.113
       node-releases: 2.0.19
       update-browserslist-db: 1.1.3(browserslist@4.24.4)
 
@@ -6867,8 +6848,6 @@ snapshots:
   bser@2.1.1:
     dependencies:
       node-int64: 0.4.0
-
-  buffer-crc32@0.2.13: {}
 
   buffer-crc32@1.0.0: {}
 
@@ -7254,8 +7233,6 @@ snapshots:
 
   denque@1.5.1: {}
 
-  denque@2.1.0: {}
-
   depd@2.0.0: {}
 
   destroy@1.2.0: {}
@@ -7374,7 +7351,7 @@ snapshots:
       chalk: 1.1.3
       lodash: 4.17.21
 
-  electron-to-chromium@1.5.112: {}
+  electron-to-chromium@1.5.113: {}
 
   emittery@0.13.1: {}
 
@@ -8310,8 +8287,9 @@ snapshots:
       hasown: 2.0.2
       side-channel: 1.1.0
 
-  ioredis@4.28.5:
+  ioredis@4.29.1:
     dependencies:
+      '@ioredis/commands': 1.2.0
       cluster-key-slot: 1.1.2
       debug: 4.4.0(supports-color@5.5.0)
       denque: 1.5.1
@@ -8319,21 +8297,6 @@ snapshots:
       lodash.flatten: 4.4.0
       lodash.isarguments: 3.1.0
       p-map: 2.1.0
-      redis-commands: 1.7.0
-      redis-errors: 1.2.0
-      redis-parser: 3.0.0
-      standard-as-callback: 2.1.0
-    transitivePeerDependencies:
-      - supports-color
-
-  ioredis@5.5.0:
-    dependencies:
-      '@ioredis/commands': 1.2.0
-      cluster-key-slot: 1.1.2
-      debug: 4.4.0(supports-color@5.5.0)
-      denque: 2.1.0
-      lodash.defaults: 4.2.0
-      lodash.isarguments: 3.1.0
       redis-errors: 1.2.0
       redis-parser: 3.0.0
       standard-as-callback: 2.1.0
@@ -8913,8 +8876,6 @@ snapshots:
 
   json-stable-stringify-without-jsonify@1.0.1: {}
 
-  json-stream@1.0.0: {}
-
   json5@1.0.2:
     dependencies:
       minimist: 1.2.8
@@ -8944,19 +8905,6 @@ snapshots:
       ms: 2.1.3
       semver: 5.7.2
 
-  jsonwebtoken@9.0.2:
-    dependencies:
-      jws: 3.2.2
-      lodash.includes: 4.3.0
-      lodash.isboolean: 3.0.3
-      lodash.isinteger: 4.0.4
-      lodash.isnumber: 3.0.3
-      lodash.isplainobject: 4.0.6
-      lodash.isstring: 4.0.1
-      lodash.once: 4.1.1
-      ms: 2.1.3
-      semver: 7.7.1
-
   jwa@1.4.1:
     dependencies:
       buffer-equal-constant-time: 1.0.1
@@ -8968,9 +8916,9 @@ snapshots:
       jwa: 1.4.1
       safe-buffer: 5.2.1
 
-  kafkajs@2.2.0: {}
+  kafkajs@1.16.0: {}
 
-  kafkajs@2.2.4: {}
+  kafkajs@2.2.0: {}
 
   keyv@4.5.4:
     dependencies:
@@ -9184,24 +9132,7 @@ snapshots:
 
   minimist@1.2.8: {}
 
-  minio@7.1.3:
-    dependencies:
-      async: 3.2.6
-      block-stream2: 2.1.0
-      browser-or-node: 2.1.1
-      buffer-crc32: 0.2.13
-      fast-xml-parser: 4.5.3
-      ipaddr.js: 2.2.0
-      json-stream: 1.0.0
-      lodash: 4.17.21
-      mime-types: 2.1.35
-      query-string: 7.1.3
-      through2: 4.0.2
-      web-encoding: 1.1.5
-      xml: 1.0.1
-      xml2js: 0.5.0
-
-  minio@8.0.4:
+  minio@7.1.4:
     dependencies:
       async: 3.2.6
       block-stream2: 2.1.0
@@ -9230,6 +9161,8 @@ snapshots:
   moment-timezone@0.5.47:
     dependencies:
       moment: 2.30.1
+
+  moment@2.24.0: {}
 
   moment@2.30.1: {}
 
@@ -9502,7 +9435,7 @@ snapshots:
 
   pg-connection-string@2.7.0: {}
 
-  pg-hstore@2.3.4:
+  pg-hstore@2.3.3:
     dependencies:
       underscore: 1.13.7
 
@@ -9599,9 +9532,8 @@ snapshots:
 
   progress@2.0.3: {}
 
-  prom-client@15.1.3:
+  prom-client@11.5.3:
     dependencies:
-      '@opentelemetry/api': 1.9.0
       tdigest: 0.1.2
 
   promise@8.3.0:
@@ -9689,8 +9621,6 @@ snapshots:
       picomatch: 2.3.1
 
   readdirp@4.1.2: {}
-
-  redis-commands@1.7.0: {}
 
   redis-errors@1.2.0: {}
 
@@ -9898,7 +9828,7 @@ snapshots:
       dottie: 2.0.6
       inflection: 1.12.0
       lodash: 4.17.21
-      moment: 2.30.1
+      moment: 2.24.0
       moment-timezone: 0.5.47
       retry-as-promised: 3.2.0
       semver: 6.3.1
@@ -9918,7 +9848,7 @@ snapshots:
       dottie: 2.0.6
       inflection: 1.12.0
       lodash: 4.17.21
-      moment: 2.30.1
+      moment: 2.24.0
       moment-timezone: 0.5.47
       retry-as-promised: 3.2.0
       semver: 6.3.1
@@ -9975,7 +9905,7 @@ snapshots:
   shallow-clone-shim@2.0.0:
     optional: true
 
-  sharing-modules@git+https://git@gitlab.com:grandline/kawa/microservices/sharing-modules.git#1c826d1e27fa2915b7ec8b5ad383926f27b90b76(@typescript-eslint/parser@8.26.0(eslint@8.57.1)(typescript@5.8.2)):
+  sharing-modules@git+https://git@gitlab.com:grandline/kawa/microservices/sharing-modules.git#7fdf15ddeca40c55237d4e65a7cf091d537f7a10(@typescript-eslint/parser@8.26.0(eslint@8.57.1)(typescript@5.8.2)):
     dependencies:
       '@hapi/boom': 9.1.4
       '@img/sharp-darwin-arm64': 0.33.5
@@ -9987,11 +9917,11 @@ snapshots:
       eslint-plugin-mocha: 6.3.0(eslint@6.8.0)
       graphql: 15.0.0
       graphql-subscriptions: 1.2.1(graphql@15.0.0)
-      ioredis: 4.28.5
+      ioredis: 4.29.1
       jsonwebtoken: 8.5.1
       kafkajs: 2.2.0
       lodash: 4.17.21
-      minio: 7.1.3
+      minio: 7.1.4
       moment: 2.30.1
       sequelize: 5.22.5
       sharp: 0.33.5
@@ -10318,7 +10248,7 @@ snapshots:
     dependencies:
       bintrees: 1.0.2
 
-  terser-webpack-plugin@5.3.13(webpack@5.97.1):
+  terser-webpack-plugin@5.3.14(webpack@5.97.1):
     dependencies:
       '@jridgewell/trace-mapping': 0.3.25
       jest-worker: 27.5.1
@@ -10586,8 +10516,6 @@ snapshots:
 
   utils-merge@1.0.1: {}
 
-  uuid@11.1.0: {}
-
   uuid@3.4.0: {}
 
   uuid@8.3.2: {}
@@ -10662,7 +10590,7 @@ snapshots:
       neo-async: 2.6.2
       schema-utils: 3.3.0
       tapable: 2.2.1
-      terser-webpack-plugin: 5.3.13(webpack@5.97.1)
+      terser-webpack-plugin: 5.3.14(webpack@5.97.1)
       watchpack: 2.4.2
       webpack-sources: 3.2.3
     transitivePeerDependencies:
@@ -10861,8 +10789,6 @@ snapshots:
     dependencies:
       sax: 1.4.1
       xmlbuilder: 11.0.1
-
-  xml@1.0.1: {}
 
   xmlbuilder@11.0.1: {}
 
