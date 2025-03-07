@@ -19,4 +19,9 @@ export class AppController {
   async getTestLib() {
     return await this.appService.getTestLib();
   }
+
+  @Get('/js')
+  getJavaScript() {
+    return this.appService.getJavaScript();
+  }
 }
