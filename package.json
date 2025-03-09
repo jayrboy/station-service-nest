@@ -38,7 +38,9 @@
     "rpro-utility": "git+https://water:CoDy_uxufkxF2a1UTQrm@gitlab.com/grandline/kawa/microservices/sharing-modules#develop",
     "rxjs": "^7.8.1",
     "sequelize": "^6.37.5",
-    "sequelize-typescript": "^2.1.6"
+    "sequelize-typescript": "^2.1.6",
+    "ts-morph": "^25.0.1",
+    "uuid": "^11.1.0"
   },
   "devDependencies": {
     "@nestjs/cli": "^10.0.0",
