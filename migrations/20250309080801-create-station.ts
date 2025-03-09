@@ -76,7 +76,7 @@ export = {
         type: DataTypes.ARRAY(DataTypes.JSONB),
         defaultValue: [],
       },
-      createdAt: {
+      created_at: {
         type: DataTypes.DATE,
         allowNull: false,
       },
