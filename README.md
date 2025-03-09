@@ -58,3 +58,9 @@ $ npx sequelize init
 $ npx sequelize-cli db:migrate
 $ npx sequelize-cli db:seed:all
 ```
+
+## Sequelize connection
+
+```sh
+$ pnpm install --save @nestjs/sequelize
+```
