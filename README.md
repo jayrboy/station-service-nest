@@ -97,3 +97,25 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 ## License
 
 Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+
+## Migrations
+
+```sh
+$ pnpm add sequelize sequelize-typescript pg pg-hstore @nestjs/config
+$ pnpm install --save-dev @types/sequelize sequelize-cli@6.2.0
+
+$ pnpm sequelize init
+```
+
+- Run auto migration {timestamp}-create-name.js
+
+```sh
+$ pnpm sequelize-cli migration:generate --name create-stations
+```
+
+- Update the generated migration file `src/sequelize/migrations/{timestamp}-create-stations-table.ts` with the following code:
+
+```sh
+$ pnpm sequelize-cli db:migrate
+$ npx sequelize-cli db:migrate
+```
