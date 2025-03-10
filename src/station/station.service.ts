@@ -10,7 +10,7 @@ export class StationService {
     private stations: typeof Station,
   ) {}
 
-  create(stationCreateInput: StationCreateInput) {
+  create(stationCreateInput: StationCreateInput): Promise<Station> {
     return this.stations.create(stationCreateInput);
   }
 
@@ -18,11 +18,14 @@ export class StationService {
     return this.stations.findAll<Station>();
   }
 
-  findOne(station_id: string) {
+  findOne(station_id: string): Promise<Station> {
     return this.stations.findByPk(station_id);
   }
 
-  async update(id: string, stationUpdateInput: StationUpdateInput) {
+  async update(
+    id: string,
+    stationUpdateInput: StationUpdateInput,
+  ): Promise<Station> {
     const [affectedRows, [updatedStation]] = await this.stations.update(
       stationUpdateInput,
       {
@@ -35,7 +38,14 @@ export class StationService {
     return updatedStation;
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} station`;
+  async remove(station_id: string): Promise<boolean> {
+    const station = await this.stations.findByPk(station_id);
+
+    if (!station) {
+      throw new Error('Station not found');
+    }
+
+    await station.destroy();
+    return true;
   }
 }
