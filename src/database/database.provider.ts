@@ -9,11 +9,11 @@ export const databaseProviders = [
     useFactory: async () => {
       const sequelize = new Sequelize({
         dialect: 'postgres',
+        host: config.development.host,
+        port: Number(config.development.port),
         username: config.development.username,
         password: config.development.password,
         database: config.development.database,
-        host: config.development.host,
-        port: Number(config.development.port),
         logging: false,
       });
       sequelize.addModels([Station]);

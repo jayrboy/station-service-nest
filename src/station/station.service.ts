@@ -15,11 +15,11 @@ export class StationService {
   }
 
   findAll(): Promise<Station[]> {
-    return this.stations.findAll();
+    return this.stations.findAll<Station>();
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} station`;
+  findOne(station_id: string) {
+    return this.stations.findByPk(station_id);
   }
 
   update(id: string, stationUpdateInput: StationUpdateInput) {

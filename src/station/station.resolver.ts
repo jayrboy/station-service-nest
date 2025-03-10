@@ -2,6 +2,7 @@ import { Resolver, Query, Mutation, Args } from '@nestjs/graphql';
 import { StationService } from './station.service';
 import { StationCreateInput } from './args/station-create.input';
 import { StationUpdateInput } from './args/station-update.input';
+import { StationQueryInput } from './args/station-query.input';
 
 @Resolver('Station')
 export class StationResolver {
@@ -18,8 +19,8 @@ export class StationResolver {
   }
 
   @Query('Station')
-  findOne(@Args('id') id: number) {
-    return this.stationService.findOne(id);
+  findOne(@Args('query') stationQueryInput: StationQueryInput) {
+    return this.stationService.findOne(stationQueryInput.station_id);
   }
 
   @Mutation('StationUpdate')
