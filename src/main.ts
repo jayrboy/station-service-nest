@@ -37,14 +37,21 @@ const EventSubscription = async () => {
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   const port = process.env.PORT || 3032;
+  const path = '/service';
+  const server = { subscriptionsPath: '/subscriptions' };
 
   EventSubscription().catch((error) =>
     logger.error(`[station_service_consumer] ${error.message}`),
   );
 
   await app.listen(port, () => {
-    logger.info(`🚀 GraphQL running at http://localhost:${port}/graphql`);
-    logger.info(`Server running at http://127.0.0.1:${port}`);
+    logger.info('🚀 Initialize graphql server');
+    logger.info(`GraphQL running at http://localhost:${port}/graphql`);
+    logger.info('🚀 Initialize Default URL Route');
+    logger.info(`Server running at http://127.0.0.1:${port}${path}`);
+    logger.info(
+      `WebSockets listening on ws://127.0.0.1:${port}${server.subscriptionsPath}`,
+    );
     logger.info(`Environment is ${env}`);
   });
 }
