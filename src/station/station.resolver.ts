@@ -9,7 +9,7 @@ export class StationResolver {
   constructor(private readonly stationService: StationService) {}
 
   @Mutation('StationCreate')
-  create(@Args('StationCreateInput') stationCreateInput: StationCreateInput) {
+  create(@Args('value') stationCreateInput: StationCreateInput) {
     return this.stationService.create(stationCreateInput);
   }
 

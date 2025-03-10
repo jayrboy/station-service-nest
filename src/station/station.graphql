@@ -237,6 +237,7 @@ input StationLatLongInput {
   longitude: Float!
 }
 input StationCreateInput {
+  id: String!
   name: String!
   code: String
   station_catalog_id: String!

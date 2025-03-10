@@ -11,7 +11,7 @@ export class StationService {
   ) {}
 
   create(stationCreateInput: StationCreateInput) {
-    return 'This action adds a new station';
+    return this.stations.create(stationCreateInput);
   }
 
   findAll(): Promise<Station[]> {

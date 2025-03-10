@@ -78,6 +78,7 @@ export class StationLatLongInput {
 }
 
 export class StationCreateInput {
+    id: string;
     name: string;
     code?: Nullable<string>;
     station_catalog_id: string;
