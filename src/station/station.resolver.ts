@@ -24,7 +24,7 @@ export class StationResolver {
   }
 
   @Mutation('StationUpdate')
-  update(@Args('StationUpdateInput') stationUpdateInput: StationUpdateInput) {
+  update(@Args('value') stationUpdateInput: StationUpdateInput) {
     return this.stationService.update(
       stationUpdateInput.id,
       stationUpdateInput,

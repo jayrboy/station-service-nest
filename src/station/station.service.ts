@@ -22,8 +22,17 @@ export class StationService {
     return this.stations.findByPk(station_id);
   }
 
-  update(id: string, stationUpdateInput: StationUpdateInput) {
-    return `This action updates a #${id} station`;
+  async update(id: string, stationUpdateInput: StationUpdateInput) {
+    const [affectedRows, [updatedStation]] = await this.stations.update(
+      stationUpdateInput,
+      {
+        where: { id },
+        returning: true,
+      },
+    );
+
+    if (affectedRows === 0) return null;
+    return updatedStation;
   }
 
   remove(id: number) {
