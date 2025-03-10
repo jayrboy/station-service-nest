@@ -1,5 +1,5 @@
 import { Sequelize } from 'sequelize-typescript';
-import config from '../../config/config';
+import databaseConfig from './database.config';
 
 import { Station } from 'src/station/entities/station.entity';
 
@@ -9,11 +9,11 @@ export const databaseProviders = [
     useFactory: async () => {
       const sequelize = new Sequelize({
         dialect: 'postgres',
-        host: config.development.host,
-        port: Number(config.development.port),
-        username: config.development.username,
-        password: config.development.password,
-        database: config.development.database,
+        host: databaseConfig.development.host,
+        port: Number(databaseConfig.development.port),
+        username: databaseConfig.development.username,
+        password: databaseConfig.development.password,
+        database: databaseConfig.development.database,
         logging: false,
       });
       sequelize.addModels([Station]);
