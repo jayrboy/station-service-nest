@@ -1,0 +1,26 @@
+services:
+  db:
+    image: postgres
+    restart: always
+    volumes:
+      - ./station-postgres-data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: kawa_user
+      POSTGRES_PASSWORD: postgresql-database-password
+      POSTGRES_DB: water
+    ports:
+      - '5432:5432'
+  app:
+    build: .
+    environment:
+      NODE_ENV: development
+      PORT: 3032
+      RPRO_BACKEND_POSTGRES_URI: postgres://kawa_user:postgresql-database-password@db:5432/water
+      RPRO_BACKEND_POSTGRES_USERNAME: kawa_user
+      RPRO_BACKEND_POSTGRES_PASSWORD: postgresql-database-password
+      RPRO_BACKEND_POSTGRES_DATABASE: water
+      RPRO_BACKEND_POSTGRES_HOST: db
+      RPRO_BACKEND_POSTGRES_PORT: 5432
+      RPRO_BACKEND_POSTGRES_DIALECT: postgres
+    depends_on:
+      - db

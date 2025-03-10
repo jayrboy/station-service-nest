@@ -1,4 +1,3 @@
-import 'dotenv/config';
 import { Dialect } from 'sequelize';
 
 interface ISequelizeConfig {
@@ -9,7 +8,7 @@ interface ISequelizeConfig {
     password?: string;
     database?: string;
     host?: string;
-    port?: number | string;
+    port?: number;
   };
 }
 
@@ -21,7 +20,7 @@ const config: ISequelizeConfig = {
     password: process.env.RPRO_BACKEND_POSTGRES_PASSWORD,
     database: process.env.RPRO_BACKEND_POSTGRES_DATABASE,
     host: process.env.RPRO_BACKEND_POSTGRES_HOST,
-    port: process.env.RPRO_BACKEND_POSTGRES_PORT,
+    port: Number(process.env.RPRO_BACKEND_POSTGRES_PORT),
   },
   test: {
     dialect: 'postgres',
@@ -30,7 +29,7 @@ const config: ISequelizeConfig = {
     password: process.env.RPRO_BACKEND_POSTGRES_PASSWORD,
     database: process.env.RPRO_BACKEND_POSTGRES_DATABASE,
     host: process.env.RPRO_BACKEND_POSTGRES_HOST,
-    port: process.env.RPRO_BACKEND_POSTGRES_PORT,
+    port: Number(process.env.RPRO_BACKEND_POSTGRES_PORT),
   },
   production: {
     dialect: 'postgres',
@@ -42,4 +41,4 @@ const config: ISequelizeConfig = {
   },
 };
 
-export = config;
+export default config;

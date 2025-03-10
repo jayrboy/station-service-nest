@@ -119,3 +119,10 @@ $ pnpm sequelize-cli migration:generate --name create-stations
 $ pnpm sequelize-cli db:migrate
 $ npx sequelize-cli db:migrate
 ```
+
+## Dockerfile
+
+```sh
+$ docker build -t station-service-nest .
+$ docker run -d -p 3032:3032 --name station-service-nest station-service-nest
+```

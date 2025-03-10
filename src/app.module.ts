@@ -11,9 +11,7 @@ import { join } from 'path';
 
 @Module({
   imports: [
-    ConfigModule.forRoot({
-      envFilePath: '.env',
-    }),
+    ConfigModule.forRoot({ isGlobal: true }),
     GraphQLModule.forRoot<ApolloDriverConfig>({
       driver: ApolloDriver,
       playground: true,

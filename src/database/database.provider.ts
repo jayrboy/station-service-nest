@@ -1,4 +1,6 @@
 import { Sequelize } from 'sequelize-typescript';
+import config from '../../config/config';
+
 import { Station } from 'src/station/entities/station.entity';
 
 export const databaseProviders = [
@@ -7,11 +9,11 @@ export const databaseProviders = [
     useFactory: async () => {
       const sequelize = new Sequelize({
         dialect: 'postgres',
-        username: 'kawa_user',
-        password: 'postgresql-database-password',
-        database: 'water',
-        host: 'localhost',
-        port: 5432,
+        username: config.development.username,
+        password: config.development.password,
+        database: config.development.database,
+        host: config.development.host,
+        port: Number(config.development.port),
         logging: false,
       });
       sequelize.addModels([Station]);
