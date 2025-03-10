@@ -1,18 +1,21 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, Inject } from '@nestjs/common';
 import { StationCreateInput } from './args/station-create.input';
 import { StationUpdateInput } from './args/station-update.input';
-import { InjectModel } from '@nestjs/sequelize';
 import { Station } from './entities/station.entity';
 
 @Injectable()
 export class StationService {
-  constructor(@InjectModel(Station) private stationModel: typeof Station) {}
+  constructor(
+    @Inject('STATIONS')
+    private stations: typeof Station,
+  ) {}
+
   create(stationCreateInput: StationCreateInput) {
     return 'This action adds a new station';
   }
 
   findAll(): Promise<Station[]> {
-    return this.stationModel.findAll();
+    return this.stations.findAll();
   }
 
   findOne(id: number) {

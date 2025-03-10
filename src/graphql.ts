@@ -174,10 +174,10 @@ export class StationStationCatalogDeviceRulesOutput {
 export class StationThresholdsOutput {
     name?: Nullable<string>;
     type: string;
-    sensor_type: string;
+    sensor_type?: Nullable<string>;
     position: string[];
-    warning?: Nullable<string>;
-    critical?: Nullable<string>;
+    warning?: Nullable<JSON>;
+    critical?: Nullable<JSON>;
     notify?: Nullable<boolean>;
 }
 
@@ -295,4 +295,5 @@ export abstract class IMutation {
     abstract StationDelete(value: StationDeleteInput): Nullable<boolean> | Promise<Nullable<boolean>>;
 }
 
+export type JSON = any;
 type Nullable<T> = T | null;

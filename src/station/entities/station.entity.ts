@@ -1,35 +1,117 @@
-import { Table, Column, Model, DataType } from 'sequelize-typescript';
+import {
+  Table,
+  Column,
+  Model,
+  DataType,
+  // ForeignKey,
+} from 'sequelize-typescript';
 import { Utility } from 'rpro-utility';
 
 const { Enumerations } = Utility;
 const { STATUS } = Enumerations;
+
 const Statuses = Object.values(STATUS);
 
-@Table({ tableName: 'stations' }) // Sequelize ORM
-export class Station extends Model {
-  @Column({ primaryKey: true, autoIncrement: true, type: DataType.STRING })
-  id: string;
-
+@Table({ tableName: 'stations' })
+export class Station extends Model<Station> {
   @Column({
     type: DataType.STRING,
     allowNull: false,
   })
   name: string;
 
-  @Column({ type: DataType.STRING })
+  @Column({
+    type: DataType.STRING,
+  })
   code: string;
+
+  @Column({
+    field: 'ext_station_id',
+    type: DataType.STRING,
+  })
+  extStationId: string;
+
+  @Column({
+    field: 'ext_station_code',
+    type: DataType.STRING,
+  })
+  extStationCode: string;
+
+  // @ForeignKey(() => StationCatalog)
+  @Column({
+    field: 'station_catalog_id',
+    type: DataType.UUID,
+  })
+  stationCatalogId: string;
+
+  // @ForeignKey(() => StationMeta)
+  @Column({
+    field: 'station_meta_code',
+    type: DataType.STRING,
+  })
+  stationMetaCode: string;
+
+  @Column({
+    type: DataType.TEXT,
+  })
+  address: string;
+
+  @Column({
+    field: 'basin_name',
+    type: DataType.STRING,
+  })
+  basinName: string;
+
+  @Column({
+    field: 'sub_basin_name',
+    type: DataType.STRING,
+  })
+  subBasinName: string;
+
+  @Column({
+    field: 'river',
+    type: DataType.STRING,
+  })
+  river: string;
+
+  @Column({
+    field: 'amphur_name',
+    type: DataType.STRING,
+  })
+  amphurName: string;
+
+  @Column({
+    field: 'tambon_name',
+    type: DataType.STRING,
+  })
+  tambonName: string;
+
+  @Column({
+    field: 'province_name',
+    type: DataType.STRING,
+  })
+  provinceName: string;
+
+  @Column({
+    type: DataType.STRING,
+  })
+  phone: string;
+
+  @Column({
+    type: DataType.DOUBLE,
+  })
+  latitude: number;
+
+  @Column({
+    type: DataType.DOUBLE,
+  })
+  longitude: number;
 
   @Column({
     type: DataType.ARRAY(DataType.STRING),
     defaultValue: [],
   })
   pictures: string[];
-
-  @Column({ type: DataType.FLOAT })
-  latitude: number;
-
-  @Column({ type: DataType.FLOAT })
-  longitude: number;
 
   @Column({
     field: 'bank_fr_height',
